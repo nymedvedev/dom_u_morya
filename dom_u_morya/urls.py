@@ -18,7 +18,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# импортируем наше представление:
+from houses.views import houses_list
 
+# настройки панели админки, доб. автоматически при созд. проекта
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # настройки, доб. мной для представления:
+    path('', houses_list)
+    # '' - пустая строка отв. за главную стр.,
+    # houses_list - стр., которая б/т вызываться, когда юзер откр. глав.стр.
 ]
