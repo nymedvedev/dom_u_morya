@@ -8,6 +8,6 @@ class House(models.Model):
     class Meta:
         verbose_name = "дом"
         verbose_name_plural = "дома"
-
+        ordering = ["name"]
     def __str__(self):
-        return self.name
+        return self.name.upper()
