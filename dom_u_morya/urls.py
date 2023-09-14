@@ -1,3 +1,5 @@
+# ФАЙЛ С URL ПРОЕКТА
+
 """
 URL configuration for dom_u_morya project.
 

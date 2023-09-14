@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # добавил в перечень наше прил. для упр. домами:
     'houses.apps.HousesConfig'
 ]
 
@@ -104,6 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
+# указал русский язык для админки:
 LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
