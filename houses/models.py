@@ -8,3 +8,6 @@ class House(models.Model):
     class Meta:
         verbose_name = "дом"
         verbose_name_plural = "дома"
+
+    def __str__(self):
+        return self.name
