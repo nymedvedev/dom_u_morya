@@ -12,6 +12,9 @@ class House(models.Model):
     price = models.IntegerField("цена")
     # IntegerField - целые числа
     description = models.TextField("описание")
+    photo = models.ImageField("фотография", upload_to = "houses/photos", default="", blank=True)
+    # класс ImageField для раб.с изобр.;
+    # "houses/photos" путь к фото; default="", blank=True параметры при отсутств.изобр.
 
     # создаю подкласс, отв. за описательную инфо:
     class Meta:
