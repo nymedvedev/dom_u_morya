@@ -6,5 +6,12 @@
 </head>
 <body>
 <h1>Список домов</h1>
+{% for house in houses %}
+    <div>
+        <h2>{{ house.name }}</h2>
+        <div>{{ house.price }}</div>
+        <div>{{ house.description }}</div>
+    </div>
+{% endfor %}
 </body>
 </html>
