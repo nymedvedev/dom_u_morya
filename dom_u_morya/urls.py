@@ -20,6 +20,10 @@ from django.contrib import admin
 from django.urls import path
 # импортируем наше представление:
 from houses.views import houses_list
+# импортируем функцию static, отв. за обраб. статич. файлов(контента):
+from django.conf.urls.static import static
+# импортируем наши настройки:
+from django.conf import settings
 
 # настройки панели админки, доб. автоматически при созд. проекта
 urlpatterns = [
@@ -29,3 +33,6 @@ urlpatterns = [
     # '' - пустая строка отв. за главную стр.,
     # houses_list - стр., которая б/т вызываться, когда юзер откр. глав.стр.
 ]
+# подключим обработку файлов: свяжем URL MEDIA в бр-ре и на ж.диске,
+# чтобы не использ. представление, а отдавать файлы как есть (статич.контент)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
