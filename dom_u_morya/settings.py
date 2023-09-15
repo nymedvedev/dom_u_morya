@@ -124,3 +124,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# добавил переменную, к-ая отв.за путь к медиа-файлам на жёстком диске:
+MEDIA_ROOT = BASE_DIR / 'media'
+# добавил переменную, к-ая отв.за путь к медиа-ф. в бр-ре:
+MEDIA_URL = "/media/"
