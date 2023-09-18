@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # добавил в перечень наше прил. для упр. домами:
-    'houses.apps.HousesConfig'
+    'houses.apps.HousesConfig',
+    #установил приложение для изм. разм. изобр. на сайте и добавил сюда:
+    'sorl.thumbnail'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR / 'media'
 # добавил переменную, к-ая отв.за путь к медиа-ф. в бр-ре:
 MEDIA_URL = "/media/"
+
+# добавил КОД ПОДКЛЮЧЕНИЯ ФАЙЛОВОГО КЭША:
+CACHES = {
+    'default': {
+        # подключил систему кэширования dj на осн. файлов:
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        # указал путь до каталога с кэшем:
+        'LOCATION': BASE_DIR / 'cache',
+        # ВАЖНО: ФАЙЛОВЫЙ КЭШ ИСП.ТОЛЬКО В РАМКАХ УЧЕБНОГО ПРОЕКТА,
+        # В РЕАЛЬНЫХ ПРОЕКТАХ ИСП.КЭШИРОВАНИЕ В ОПЕР.ПАМЯТИ
+        # (ПРИ ВЫКЛАД.ПРИЛ.НА СЕРВ. ПОДКЛЮЧУ МЕМ-КЭШ)
+    }
+}
