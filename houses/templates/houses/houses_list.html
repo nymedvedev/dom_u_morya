@@ -11,6 +11,14 @@
         <h2>{{ house.name }}</h2>
         <div>{{ house.price }}</div>
         <div>{{ house.description }}</div>
+        <!-- добавим в шаблон условие: если у дома есть фотография -->
+        {% if house.photo %}
+            <!-- то вывести тег img и добавить ссылку на эту фотографию -->
+            <!-- а в атрибут alt имя дома -->
+            <img src="{{ house.photo.url }}" alt="Дом {{ house.name }}">
+        {% endif %}
+
+
     </div>
 {% endfor %}
 </body>
