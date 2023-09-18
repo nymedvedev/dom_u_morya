@@ -13,14 +13,12 @@
         <div>{{ house.description }}</div>
 
         <!-- добавим в шаблон условие: если у дома есть фотография -->
-        {% load thumbnail%}
+        {% load thumbnail %}
         {% thumbnail house.photo "325x200" crop="center" as im %}
             <!-- то вывести тег img и добавить ссылку на эту фотографию -->
             <!-- а в атрибут alt имя дома -->
             <img src="{{ im.url }}" alt="Дом {{ house.name }}">
         {% endthumbnail %}
-
-
     </div>
 {% endfor %}
 </body>
