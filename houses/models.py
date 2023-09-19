@@ -25,5 +25,4 @@ class House(models.Model):
     # метод, чтобы объекты (дома) дома в админке
     # вместо "House object" наз. наименованиями (name).
     def __str__(self):
-        return self.name.upper()
-        # при созд. объектов - наим. будут в верх. рег.
+        return self.name
