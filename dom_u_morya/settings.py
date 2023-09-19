@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # добавил в перечень наше прил. для упр. домами:
     'houses.apps.HousesConfig',
-    #установил приложение для изм. разм. изобр. на сайте и добавил сюда:
-    'sorl.thumbnail'
+    # добавил прил. для изм. разм. изобр. на сайте и добавил сюда:
+    'sorl.thumbnail',
+    # добавил прил. для получения заявок:
+    'orders'
 ]
 
 MIDDLEWARE = [
