@@ -6,7 +6,8 @@ from django.shortcuts import render, get_object_or_404
 # импортируем модель, т.к. дома (которые будем отображать на сайте,
 # хранятся в БД, а доступ к БД через модели).
 from houses.models import House
-
+# для вывода формы на сайт создаю представление:
+from orders.forms import OrderForm
 
 # Ф-ЦИЯ (называется "представление") ГЕНЕРИРУЕТ HTML-стр. И ВОЗВРАЩАЕТ ЕЁ ЮЗЕРУ:
 def houses_list(request):
@@ -28,6 +29,8 @@ def house_detail(request, house_id):
     # кот-ая приним. модель House и пар-тр id, по кот-му б/т поиск
     # нужн. объекта. Если найден - функ.верн. его в перем. House, нет - 404:
     house = get_object_or_404(House, id=house_id)
+    # добавлю форму:
+    form = OrderForm() # форма OrderForm т/рь связ. с моделью Order, к-рая св. с табл. в БД
     # подключу к представлению шаблон:
-    return render(request, "houses/house_detail.html", {"house": house})
+    return render(request, "houses/house_detail.html", {"house": house, "form": form})
 
