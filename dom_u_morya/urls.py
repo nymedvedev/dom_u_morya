@@ -18,20 +18,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# импортируем наше представление:
-from houses.views import houses_list
+# импортируем наше представление,
+# h_list для списка домов, h_detail - для стр. с отд.домом:
+from houses.views import houses_list, house_detail
 # импортируем функцию static, отв. за обраб. статич. файлов(контента):
 from django.conf.urls.static import static
 # импортируем наши настройки:
 from django.conf import settings
 
+
 # настройки панели админки, доб. автоматически при созд. проекта
 urlpatterns = [
     path('admin/', admin.site.urls),
     # настройки, доб. мной для представления:
-    path('', houses_list)
+    path('', houses_list),
     # '' - пустая строка отв. за главную стр.,
     # houses_list - стр., которая б/т вызываться, когда юзер откр. глав.стр.
+    # для отобр. стр. с url = номеру дома:
+    path("<int:house_id>", house_detail)
 ]
 # подключим обработку файлов: свяжем URL MEDIA в бр-ре и на ж.диске,
 # чтобы не использ. представление, а отдавать файлы как есть (статич.контент)
