@@ -1,11 +1,10 @@
+<!-- передаю код ниже в index.html-->
+{% extends "index.html" %}
+<!-- загружаю библ. thumbnail -->
 {% load thumbnail %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Дом у моря</title>
-</head>
-<body>
+
+<!-- укажу, в ккакой именно блок в index.html я передаю код -->
+{% block application %}
 <h1>Список домов</h1>
 {% for house in houses %}
     <div>
@@ -15,13 +14,12 @@
         <div>{{ house.price }}</div>
         <div>{{ house.description }}</div>
 
-        <!-- добавим в шаблон условие: если у дома есть фотография -->
+        <!-- добавил в шаблон условие: если у дома есть фотография -->
                 {% thumbnail house.photo "325x200" crop="center" as im %}
-            <!-- то вывести тег img и добавить ссылку на эту фотографию -->
+            <!-- то вывести тег img и добавить ссылку на эту фотографию, -->
             <!-- а в атрибут alt имя дома -->
             <img src="{{ im.url }}" alt="Дом {{ house.name }}">
         {% endthumbnail %}
     </div>
 {% endfor %}
-</body>
-</html>
+{% endblock %}
