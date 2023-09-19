@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ house.name }}</title>
+</head>
+<body>
+
+
+    <div>
+        <h1>{{ house.name }}</h1>
+        <div>{{ house.price }}</div>
+        <div>{{ house.description }}</div>
+
+        <!-- добавим в шаблон условие: если у дома есть фотография -->
+        {% load thumbnail %}
+        {% thumbnail house.photo "650x400" crop="center" as im %}
+            <!-- то вывести тег img и добавить ссылку на эту фотографию -->
+            <!-- а в атрибут alt имя дома -->
+            <img src="{{ im.url }}" alt="Дом {{ house.name }}">
+        {% endthumbnail %}
+    </div>
+
+</body>
+</html>
