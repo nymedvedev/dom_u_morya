@@ -34,7 +34,9 @@ def house_detail(request, house_id):
     # (request.POST or None) - передаём данные пост-запроса или None (ес.данных нет)
     # проверка валидности данных юзера:
     if request.method == "POST":
-        print(form.is_valid())
+        if form.is_valid():
+            # сохраняем форму:
+            form.save()
     # форма OrderForm т/рь связ. с моделью Order, к-рая св. с табл. в БД
     # подключу к представлению шаблон:
     return render(request, "houses/house_detail.html", {"house": house, "form": form})
