@@ -3,9 +3,14 @@
 <!-- загружаю библ. thumbnail -->
 {% load thumbnail %}
 
-<!-- укажу, в ккакой именно блок в index.html я передаю код -->
+<!-- укажу, в ккакой именно блок в index.html я передаю код: -->
 {% block application %}
 <h1>Список домов</h1>
+<!-- это форма для фильтрации по цене: -->
+<form method="get">
+    {{ form.as_p }}
+<button type="submit">Поиск</button>
+</form>
 {% for house in houses %}
     <div>
     <!-- Применяю шаблонный тег url, который прин.имя url-адреса 'house' и доп. пар-р house_id=house.id,

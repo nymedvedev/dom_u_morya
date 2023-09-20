@@ -8,21 +8,23 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-
 # импортируем модель, т.к. дома (которые будем отображать на сайте,
 # хранятся в БД, а доступ к БД через модели).
 from houses.models import House
 # для вывода формы на сайт создаю представление:
 from orders.forms import OrderForm
+#импортирую класс для фильтрации домов на стр.:
+from houses.forms import HousesFilterForm
 
 # Ф-ЦИЯ (называется "представление") ГЕНЕРИРУЕТ HTML-стр. И ВОЗВРАЩАЕТ ЕЁ ЮЗЕРУ:
 def houses_list(request):
     houses = House.objects.all()
+    form = HousesFilterForm() # форма фильтрации из forms.py
     # выведем инфо о домах в консоль:
     for house in houses:
         print(house.name, house.price)
     # свяжем представление (houses_list) c шаблоном (houses_list.html)
-    return render(request, "houses/houses_list.html", {"houses": houses})
+    return render(request, "houses/houses_list.html", {"houses": houses, "form": form})
     # Ф-ЦИЯ houses_list ВОЗВРАЩАЕТ РЕЗУЛЬТАТ ФУНКЦИИ render,
     # которая принимает:
     # 1) запрос (request) юзера,
