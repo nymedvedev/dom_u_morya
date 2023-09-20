@@ -18,8 +18,15 @@ from houses.forms import HousesFilterForm
 
 # Ф-ЦИЯ (называется "представление") ГЕНЕРИРУЕТ HTML-стр. И ВОЗВРАЩАЕТ ЕЁ ЮЗЕРУ:
 def houses_list(request):
-    houses = House.objects.all()
-    form = HousesFilterForm() # форма фильтрации из forms.py
+    houses = House.objects.all() # получаем список всех домов из БД ч/з модель House
+    form = HousesFilterForm(request.GET) # форма фильтрации из forms.py
+    if form.is_valid(): # метод проверяет, верные ли переданы данные
+        if form.cleaned_data["min_price"]: # есть ли мин.цена
+            houses = houses.filter(price__gte=form.cleaned_data["min_price"])
+            # __gte - оставляет дома, цена к-ых больше или равна значению (greater than or equal)
+        if form.cleaned_data["max_price"]:  # есть ли макс.цена
+            houses = houses.filter(price__lte=form.cleaned_data["max_price"])
+            # __lte - less than or equal (меньше или равно)
     # выведем инфо о домах в консоль:
     for house in houses:
         print(house.name, house.price)
