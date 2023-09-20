@@ -39,16 +39,24 @@ def house_detail(request, house_id):
     form = OrderForm(request.POST or None, initial={"house": house})
     # (request.POST or None) - передаём данные пост-запроса или None (ес.данных нет)
     # initial={"house": house} - в поле "Дом:" б/т по-умол.стоять уже выбр.тип дома
+    # форма OrderForm т/рь связ. с моделью Order, к-рая св. с табл. в БД
 
     # проверка валидности данных юзера:
     if request.method == "POST":
+        # обрабатываем данные пост-запроса
         if form.is_valid():
             # сохраняем форму:
             form.save()
-            # HttpResponseRedirect отв. за статус перенаправления (302 "перемещено временно")
+            url = reverse("house", kwargs={"house_id": house.id})
             # reverse принимает 1)имя пути; 2)параметр формир-я адреса
-            return HttpResponseRedirect(reverse("house", kwargs={"house_id": house.id}))
-    # форма OrderForm т/рь связ. с моделью Order, к-рая св. с табл. в БД
-    # подключу к представлению шаблон:
-    return render(request, "houses/house_detail.html", {"house": house, "form": form})
+            return HttpResponseRedirect(f"{url}?sent=1")
+            # HttpResponseRedirect отв. за статус перенаправления (302 "перемещено временно")
+            # ?sent=1 - параметр, к-ый добавл. в URL
 
+    # подключу к представлению шаблон:
+    return render(request, "houses/house_detail.html", {
+        "house": house,
+        "form": form,
+        "sent": request.GET.get("sent")
+        # работаем с гет-параметрами (к-ые передаются в адресной строке бр-ра)
+    })
