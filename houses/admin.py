@@ -1,6 +1,6 @@
 # ПАНЕЛЬ АДМИНИСТРИРОВАНИЯ ПРИЛОЖЕНИЯ.
-# добавим в неё наше прилож. по упр. домами
 
+# добавим в неё наше прилож. по упр. домами
 from django.contrib import admin # строка django по-ум.
 # свяжем класс HouseAdmin с моделью House:
 # для этого 1) импортируем House из моделей проги
@@ -13,4 +13,5 @@ class HouseAdmin(admin.ModelAdmin):
 # унаследованный класс HouseAdmin отв. за админку модели House
 
     # добавим в инфо о доме цену:
-    list_display = ["name", "price"]
+    list_display = ["name", "price", "active"]
+    list_filter = ["active"]

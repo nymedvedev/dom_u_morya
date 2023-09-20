@@ -16,6 +16,9 @@ class House(models.Model):
     # класс ImageField для раб.с изобр.;
     # "houses/photos" путь к фото; default="", blank=True параметры при отсутств.изобр.
 
+    # создал атрибут активен ли дом (по умолч. - да)
+    active = models.BooleanField("активен", default=True)
+
     # создаю подкласс, отв. за описательную инфо:
     class Meta:
         verbose_name = "дом" # для объектов в ед. ч.
