@@ -1,7 +1,13 @@
 # ФАЙЛ С ЛОГИКОЙ РАБОТЫ ПРИЛОЖЕНИЯ
 
+# импортируем render, которая создаёт отв. на запросы в виде html
+# импортируем get_object_or_404, чтобы получить объект или 404, если объект был удалён
 from django.shortcuts import render, get_object_or_404
-#импортируем get_object_or_404, чтобы
+
+# импортируем функцию перенаправления, функицию генерации URL-адресов
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 # импортируем модель, т.к. дома (которые будем отображать на сайте,
 # хранятся в БД, а доступ к БД через модели).
@@ -18,9 +24,9 @@ def houses_list(request):
     # свяжем представление (houses_list) c шаблоном (houses_list.html)
     return render(request, "houses/houses_list.html", {"houses": houses})
     # Ф-ЦИЯ houses_list ВОЗВРАЩАЕТ РЕЗУЛЬТАТ ФУНКЦИИ render,
-    # КОТОРАЯ ПРИНИМАЕТ:
-    # 1) ЗАПРОС (request) ЮЗЕРА,
-    # 2) НАЗВ. ШАБЛОНА ("houses/houses_list.html")
+    # которая принимает:
+    # 1) запрос (request) юзера,
+    # 2) назв.шаблона ("houses/houses_list.html")
     # 3) словарь для вывода данных в html (на сайт)
 
 # добавим представление для отобр. отд. стр. с домами:
@@ -39,6 +45,9 @@ def house_detail(request, house_id):
         if form.is_valid():
             # сохраняем форму:
             form.save()
+            # HttpResponseRedirect отв. за статус перенаправления (302 "перемещено временно")
+            # reverse принимает 1)имя пути; 2)параметр формир-я адреса
+            return HttpResponseRedirect(reverse("house", kwargs={"house_id": house.id}))
     # форма OrderForm т/рь связ. с моделью Order, к-рая св. с табл. в БД
     # подключу к представлению шаблон:
     return render(request, "houses/house_detail.html", {"house": house, "form": form})
