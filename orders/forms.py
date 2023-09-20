@@ -10,6 +10,8 @@ from houses.models import House
 # класс OrderForm унаследован от ModelForm,
 # т.к. я хочу создать форму на осн. модели:
 class OrderForm(forms.ModelForm):
+    # добавим согласие юзера с обр.перс.д.:
+    personal_data = forms.BooleanField(label="Я согласен (/согласна) на обработку персональных данных.", required=True)
     # скроем возм.выбора дома:
     house = forms.ModelChoiceField(queryset=House.objects.all(), widget=forms.HiddenInput)
     # queryset в кач-ве фильтра, widget - настройка отображения
