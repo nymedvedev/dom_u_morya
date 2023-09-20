@@ -30,8 +30,10 @@ def house_detail(request, house_id):
     # нужн. объекта. Если найден - функ.верн. его в перем. House, нет - 404:
     house = get_object_or_404(House, id=house_id)
     # добавлю форму:
-    form = OrderForm(request.POST or None)
+    form = OrderForm(request.POST or None, initial={"house": house})
     # (request.POST or None) - передаём данные пост-запроса или None (ес.данных нет)
+    # initial={"house": house} - в поле "Дом:" б/т по-умол.стоять уже выбр.тип дома
+
     # проверка валидности данных юзера:
     if request.method == "POST":
         if form.is_valid():
