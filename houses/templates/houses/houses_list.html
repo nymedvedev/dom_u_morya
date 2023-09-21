@@ -1,7 +1,8 @@
 <!-- передаю код ниже в index.html-->
 {% extends "index.html" %}
-<!-- загружаю библ. thumbnail -->
-{% load thumbnail %}
+<!-- загружаю библ. thumbnail (миниатюры)
+и humanize (теги для "очеловечивания" сайта) -->
+{% load thumbnail humanize %}
 
 <!-- укажу, в ккакой именно блок в index.html я передаю код: -->
 {% block application %}
@@ -9,22 +10,26 @@
 <!-- это форма для фильтрации по цене: -->
 <form method="get">
     {{ form.as_p }}
-<button type="submit">Поиск</button>
+<button type="submit" >Поиск</button>
 </form>
-{% for house in houses %}
-    <div>
+
+
+    <ul class="houses">
+        {% for house in houses %}
+        <li class="house">
     <!-- Применяю шаблонный тег url, который прин.имя url-адреса 'house' и доп. пар-р house_id=house.id,
     необх. для форм-ния этого url-->
-        <h2><a href="{% url 'house' house_id=house.id %}">{{ house.name }}</a></h2>
-        <div>{{ house.price }}</div>
-        <div>{{ house.description }}</div>
-
-        <!-- добавил в шаблон условие: если у дома есть фотография -->
-                {% thumbnail house.photo "325x200" crop="center" as im %}
+        <a href="{% url 'house' house_id=house.id %}">
+            <h2>{{ house.name }}</h2>
+            <div class="price">{{ house.price|intcomma }}</div>
+            <!-- добавил в шаблон условие: если у дома есть фотография -->
+            {% thumbnail house.photo "325x200" crop="center" as im %}
             <!-- то вывести тег img и добавить ссылку на эту фотографию, -->
             <!-- а в атрибут alt имя дома -->
-            <img src="{{ im.url }}" alt="Дом {{ house.name }}">
-        {% endthumbnail %}
-    </div>
+                <img src="{{ im.url }}" alt="Дом {{ house.name }}">
+            {% endthumbnail %}
+        </a>
+    </li>
 {% endfor %}
+    </ul>
 {% endblock %}
