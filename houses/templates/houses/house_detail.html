@@ -1,10 +1,12 @@
 {% extends "index.html" %}
-{% load thumbnail %}
+<!-- загружаю библиотеки: -->
+{% load thumbnail humanize %}
 {% block application %}
-<a href="{% url 'home' %}">Главная</a>
-    <div>
-        <h1>{{ house.name }}</h1>
-        <div>{{ house.price }}</div>
+    <div class="house-detail">
+        <a href="{% url 'home' %}">Главная</a>
+
+        <h1 class="house-name">{{ house.name }} <span class="price">{{ house.price|intcomma }} &#x20bd; </span></h1>
+        <div></div>
         <div>{{ house.description }}</div>
         <!-- добавим в шаблон условие: если у дома есть фотография -->
         {% thumbnail house.photo "650x400" crop="center" as im %}
@@ -12,16 +14,17 @@
             <!-- а в атрибут alt имя дома -->
             <img src="{{ im.url }}" alt="Дом {{ house.name }}">
         {% endthumbnail %}
-    </div>
 
-    <h2>Заявка</h2>
-    {% if sent %}
-        <p>Спасибо! Ваша заявка принята.</p>
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Отправить заявку</button>
-    </form>
+
+        <h2>Заявка</h2>
+        {% if sent %}
+            <p>Спасибо! Ваша заявка принята.</p>
+        {% endif %}
+        <form method="post" class="order-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
 {% endblock %}
 

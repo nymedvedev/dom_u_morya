@@ -3,15 +3,15 @@
 <!-- загружаю библ. thumbnail (миниатюры)
 и humanize (теги для "очеловечивания" сайта) -->
 {% load thumbnail humanize %}
-
+<h1></h1>
 <!-- укажу, в ккакой именно блок в index.html я передаю код: -->
 {% block application %}
-<h1>Список домов</h1>
+
 <!-- это форма для фильтрации по цене: -->
-<form method="get">
-    {{ form.as_p }}
-<button type="submit" >Поиск</button>
-</form>
+    <form method="get" class="search-form">
+        {{ form.as_p }}
+    <button type="submit" >Поиск</button>
+    </form>
 
 
     <ul class="houses">
@@ -26,7 +26,7 @@
             {% thumbnail house.photo "325x200" crop="center" as im %}
             <!-- то вывести тег img и добавить ссылку на эту фотографию, -->
             <!-- а в атрибут alt имя дома -->
-                <img src="{{ im.url }}" alt="Дом {{ house.name }}">
+                <img src="{{ im.url }}" alt="Дом {{ house.name }}" class="img">
             {% endthumbnail %}
         </a>
     </li>
