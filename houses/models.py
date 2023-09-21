@@ -23,7 +23,7 @@ class House(models.Model):
     class Meta:
         verbose_name = "дом" # для объектов в ед. ч.
         verbose_name_plural = "дома" # для объектов во мн. ч.
-        ordering = ["name"] # добавил сортировку по алфовиту
+        ordering = ["-active", "name"] # добавил сортировку по 1) активности, 2) алфовиту
 
     # метод, чтобы объекты (дома) дома в админке
     # вместо "House object" наз. наименованиями (name).
