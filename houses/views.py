@@ -44,7 +44,7 @@ def house_detail(request, house_id):
     # присваиваем переменной house рез-тат раб.функ. get_object_or_404,
     # кот-ая приним. модель House и пар-тр id, по кот-му б/т поиск
     # нужн. объекта. Если найден - функ.верн. его в перем. House, нет - 404:
-    house = get_object_or_404(House, id=house_id)
+    house = get_object_or_404(House, id=house_id, active=True)
     # добавлю форму:
     form = OrderForm(request.POST or None, initial={"house": house})
     # (request.POST or None) - передаём данные пост-запроса или None (ес.данных нет)
