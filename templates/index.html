@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+<!-- вставлю логотип из header/html -->
+{% include 'header.html' %}
 {% block application %} {% endblock %}
+{% include 'footer.html' %}
 </body>
 </html>
