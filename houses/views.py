@@ -28,6 +28,11 @@ def houses_list(request):
         if form.cleaned_data["max_price"]:  # есть ли макс.цена
             houses = houses.filter(price__lte=form.cleaned_data["max_price"])
             # __lte - less than or equal (меньше или равно)
+
+        # добавил фильтр по тексту в поле(описание=description) без учёта регистра(icontains)
+        if form.cleaned_data["query"]:
+            houses = houses.filter(description__icontains=form.cleaned_data["query"])
+
     # выведем инфо о домах в консоль:
     for house in houses:
         print(house.name, house.price)
