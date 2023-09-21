@@ -15,6 +15,8 @@ from houses.models import House
 from orders.forms import OrderForm
 #импортирую класс для фильтрации домов на стр.:
 from houses.forms import HousesFilterForm
+# импортирую возможность исп. операторы с OR:
+from django.db.models import Q
 
 # Ф-ЦИЯ (называется "представление") ГЕНЕРИРУЕТ HTML-стр. И ВОЗВРАЩАЕТ ЕЁ ЮЗЕРУ:
 def houses_list(request):
@@ -29,9 +31,11 @@ def houses_list(request):
             houses = houses.filter(price__lte=form.cleaned_data["max_price"])
             # __lte - less than or equal (меньше или равно)
 
-        # добавил фильтр по тексту в поле(описание=description) без учёта регистра(icontains)
+        # добавил фильтр по тексту без учёта регистра(icontains)
         if form.cleaned_data["query"]:
-            houses = houses.filter(description__icontains=form.cleaned_data["query"])
+            houses = houses.filter(
+                Q(description__icontains=form.cleaned_data["query"]) | # поиск в описании
+                Q(name__icontains=form.cleaned_data["query"])) # поиск в имени
 
     # выведем инфо о домах в консоль:
     for house in houses:
