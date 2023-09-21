@@ -10,3 +10,9 @@ class HousesFilterForm(forms.Form):
     max_price = forms.IntegerField(label="до", required=False)
     # добавлю форму поиска по тексту:
     query = forms.CharField(label="описание", required=False)
+    # добавлю сортировку на стр. со списком домов:
+    ordering = forms.ChoiceField(
+        label="сортировка", required=False,
+        choices=[("name", "по алфавиту"),
+                 ("price", "дешёвые сверху"),
+                 ("-price", "дорогие сверху")])

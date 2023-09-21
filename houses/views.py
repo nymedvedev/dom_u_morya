@@ -36,10 +36,9 @@ def houses_list(request):
             houses = houses.filter(
                 Q(description__icontains=form.cleaned_data["query"]) | # поиск в описании
                 Q(name__icontains=form.cleaned_data["query"])) # поиск в имени
-
-    # выведем инфо о домах в консоль:
-    for house in houses:
-        print(house.name, house.price)
+        # добавлю сортировку (по "цене"/по "-цене"/по алф.):
+        if form.cleaned_data["ordering"]:
+            houses = houses.order_by(form.cleaned_data["ordering"])
     # свяжем представление (houses_list) c шаблоном (houses_list.html)
     return render(request, "houses/houses_list.html", {"houses": houses, "form": form})
     # Ф-ЦИЯ houses_list ВОЗВРАЩАЕТ РЕЗУЛЬТАТ ФУНКЦИИ render,
