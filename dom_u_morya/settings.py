@@ -21,9 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-dt9o@_zjcipyb2expgauh9q8j2qn1xszw3y4t=93)df*14ggrw'
+# в серверной версии эту переменную нужно переопределить в local_settings.py
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# в серверной версии эту переменную нужно переопределить в local_settings.py в False
 
 ALLOWED_HOSTS = []
 
@@ -149,3 +151,9 @@ CACHES = {
         # (ПРИ ВЫКЛАД.ПРИЛ.НА СЕРВ. ПОДКЛЮЧУ МЕМ-КЭШ)
     }
 }
+
+# подключу файл с локальными настройками:
+try:
+    from dom_u_morya.local_settings import *
+except ImportError:
+    pass
