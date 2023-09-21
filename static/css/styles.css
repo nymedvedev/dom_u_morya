@@ -1,0 +1,235 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+}
+
+header {
+    height: 60px;
+    padding: 17px 0 22px 0;
+    background-color: #eeedec;
+    margin-bottom: 20px;
+}
+
+header .logo {
+    width: 227px;
+    height: 61px;
+    margin: 0 auto;
+    display: block;
+}
+
+.houses {
+    width: 1055px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    padding: 0;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 40px 40px;
+}
+
+.houses .house {
+    width: 325px;
+    height: 270px;
+}
+
+.houses .house a {
+    text-decoration: none;
+}
+
+.houses .house .img {
+    width: 325px;
+    height: 200px;
+}
+
+.houses .house h2 {
+    font-size: 18px;
+    line-height: 18px;
+    height: 20px;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.houses .house .price {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #5a5a5a;
+    margin-bottom: 5px;
+}
+
+footer {
+    height: 35px;
+    line-height: 36px;
+    background-color: #5a5a5a;
+    text-align: center;
+    text-transform: uppercase;
+    color: #aeaeae;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+/*
+ * Форма поиска
+ */
+.search-form {
+    width: 1024px;
+    display: flex;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.search-form p {
+    padding: 0;
+    height: 32px;
+    margin: 0;
+}
+
+.search-form input[type=number],
+.search-form input[type=text],
+.search-form select {
+    border: 1px solid #a8a8a8;
+    width: 100px;
+    padding: 5px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.search-form select {
+    width: 150px;
+}
+
+.search-form button[type=submit] {
+    background-color: #2bd07c;
+    padding: 5px 20px;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    line-height: 20px;
+    border: 1px solid #2bd07c;
+    display: block;
+    cursor: pointer;
+}
+
+.search-form button[type=submit]:hover {
+    background-color: #22b182;
+}
+
+.search-form label {
+    color: #5a5a5a;
+    font-weight: normal;
+}
+
+#id_query {
+    width: 200px;
+}
+
+/*
+ * Информация о доме
+ */
+
+.house-name {
+    font-size: 28px;
+    line-height: 28px;
+    height: 28px;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0;
+    display: block;
+}
+
+.house-name .price {
+    font-weight: bold;
+    border: 2px solid #5a5a5a;
+    color: #5a5a5a;
+    font-size: 18px;
+    line-height: 24px;
+    height: 24px;
+    padding: 0 10px;
+    margin-left: 10px;
+    display: block;
+    float: right;
+}
+
+.house-detail {
+    width: 1024px;
+    margin: 0 auto 20px auto;
+}
+
+.house-detail .house {
+    float: left;
+    width: 675px;
+}
+
+.house-detail .order {
+    float: left;
+    margin-left: 20px;
+}
+
+.house-detail .house img {
+    width: 675px;
+    height: 350px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.house-detail .house .description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 40px;
+}
+
+.house-detail .order {
+    background-color: #eeedec;
+    width: 289px;
+    padding: 5px 20px;
+}
+
+.house-detail .order h2 {
+    font-size: 18px;
+    line-height: 18px;
+    height: 18px;
+    color: #5a5a5a;
+}
+
+.order-form p {
+    margin-bottom: 5px;
+}
+
+.order-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.order-form input[type=text] {
+    padding: 10px 7px;
+    width: 270px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.order-form button[type=submit] {
+    width: 285px;
+    padding: 15px 0;
+    border: 0;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    background-color: #2bd07c;
+    margin-bottom: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+}
