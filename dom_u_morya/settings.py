@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # добавил прил. для изм. разм. изобр. на сайте и добавил сюда:
     'sorl.thumbnail',
     # добавил прил. для получения заявок:
-    'orders',
+    'orders.apps.OrdersConfig',
     # добавил библиотеку для изм.внеш.вида некоторых эл-тов:
     'django.contrib.humanize'
 ]

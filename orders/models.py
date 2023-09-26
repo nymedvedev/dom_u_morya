@@ -13,4 +13,9 @@ class Order(models.Model):
     # дата заявки автоматически б/т заполнено актуальн. датой:
     date = models.DateTimeField("дата", auto_now_add=True)
 
+    # сделаю в админке "заявка\-ки" вместо "order\-s":
+    class Meta:
+        verbose_name = "заявка"
+        verbose_name_plural = "заявки"
+
 
