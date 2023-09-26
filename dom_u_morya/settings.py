@@ -116,7 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # указал русский язык для админки:
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+# указал временной пояс по мск,
+# по нему в админку будет сохраняться время создания заявок на сайте
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
