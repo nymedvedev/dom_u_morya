@@ -4,18 +4,29 @@
   </a>
   <h1>Dom_u_morya</h3>
   <p>
-    My first project on Django 4 is an online store of houses by the sea.
+    Мой первый проект на Django: онлайн-магазин домов у моря. <br />
+     <br />
+    My first project on Django is an online store of houses by the sea.
     <br />
     <br />
     <br />
-    <a href="https://99c9c44a9ba6.hosting.myjino.ru/">View Demo</a>
+    <a href="https://99c9c44a9ba6.hosting.myjino.ru/">Посмотреть демо сайта / View Demo</a>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## О проекте / About The Project
 
+<br />
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project.png?raw=true" alt="Main page" width="1024" height="360">
+В рамках курса по изучению Django, я разработал сайт по продаже домов у моря.
+
+На главной странице сайта есть сортировка по параметрам: <br />
+* по диапазону цен 
+* поиск по имени
+* от недорогих к более дорогим
+* от более дорогих к недорогим
+
 
 As part of the Django course, I developed a website for selling houses by the sea.  
 The site has a main page with sorting capabilities:
@@ -23,13 +34,19 @@ The site has a main page with sorting capabilities:
 * by name search
 * from cheap to expensive
 * from expensive to cheap
-  
+
+Вы можете выбрать понравившийся дом, перейти на его страничку и оставить заявку. <br />
+<br />
 You can choose the house you like, go to the page of the selected house and leave an order.
 <br />
 <br />
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_order.png?raw=true" alt="Object page" width="1024" height="492">
-After sending the application, the page with the house will be updated, a message will appear that the application has been received.
+После отправки заявки, страница обновится, появится сообщение об успешном получении заявки. <br />Заявка добавится в панели администрирования.<br />
 <br />
+After sending the order, the page with the house will be updated, a message will appear that the order has been received. <br />The application will be added to the admin panel.
+<br />
+<br />
+Проектом можно управлять через панель администрирования.<br />
 <br />
 The project is managed using the administration panel.
 <br />
@@ -37,11 +54,15 @@ The project is managed using the administration panel.
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin.png?raw=true" alt="Object page" width="1024" height="492">
 <br />
 <br />
+В панели администрирования вы можете создавать, редактировать, удалять и деактивировать объекты (дома).<br />
+<br />
 In the administration panel you can create, edit, delete and deactivate objects (homes).
 <br />
 <br />
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_houses.png?raw=true" alt="Object page" width="1024" height="492">
 <br />
+<br />
+Просматривать и удалять заявки.<br />
 <br />
 View and delete orders.
 <br />
@@ -49,14 +70,15 @@ View and delete orders.
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_orders.png?raw=true" alt="Object page" width="1024" height="492">
 <br />
 <br />
-Assign (give rights) managers who will deal with objects (houses) and applications, while they do not need to know programming at all.
+Назначать мереджеров (давать права), которые будут управлять объектами (домами) и заказами, при этом менеджерам совершенно не требуется уметь программировать.<br />
+<br />
+Assign managers (give rights)  who will deal with objects (houses) and orders, while they do not need to know programming at all.
 <br />
 <br />
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_manage.png?raw=true" alt="Object page" width="1024" height="492">
 <br />
 <br />
-
-### Built With
+### Разработал с помощью / Built With
 
 
 * [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)][Python-url]
@@ -66,7 +88,7 @@ Assign (give rights) managers who will deal with objects (houses) and applicatio
 
 
 <!-- CONTACT -->
-## Contact
+## Контакт / Contact
 
 Nikolay Medvedev - Telegram: @ny_medvedev - medvedev.ny@gmail.com
 
