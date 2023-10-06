@@ -18,7 +18,7 @@
 ## О проекте / About The Project
 
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project.png?raw=true" alt="Main page" width="1024" height="360">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project.png?raw=true" alt="Main page">
 В рамках курса по изучению Django, я разработал сайт по продаже домов у моря.
 
 На главной странице сайта есть сортировка по параметрам: <br />
@@ -40,7 +40,7 @@ The site has a main page with sorting capabilities:
 You can choose the house you like, go to the page of the selected house and leave an order.
 <br />
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_order.png?raw=true" alt="Object page" width="1024" height="492">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_order.png?raw=true" alt="Object page">
 После отправки заявки, страница обновится, появится сообщение об успешном получении заявки. <br />Заявка добавится в панели администрирования.<br />
 <br />
 After sending the order, the page with the house will be updated, a message will appear that the order has been received. <br />The application will be added to the admin panel.
@@ -51,7 +51,7 @@ After sending the order, the page with the house will be updated, a message will
 The project is managed using the administration panel.
 <br />
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin.png?raw=true" alt="Object page" width="1024" height="492">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin.png?raw=true" alt="Object page">
 <br />
 <br />
 В панели администрирования вы можете создавать, редактировать, удалять и деактивировать объекты (дома).<br />
@@ -59,7 +59,7 @@ The project is managed using the administration panel.
 In the administration panel you can create, edit, delete and deactivate objects (homes).
 <br />
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_houses.png?raw=true" alt="Object page" width="1024" height="492">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_houses.png?raw=true" alt="Object page">
 <br />
 <br />
 Просматривать и удалять заявки.<br />
@@ -67,7 +67,7 @@ In the administration panel you can create, edit, delete and deactivate objects 
 View and delete orders.
 <br />
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_orders.png?raw=true" alt="Object page" width="1024" height="492">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_orders.png?raw=true" alt="Object page">
 <br />
 <br />
 Назначать мереджеров (давать права), которые будут управлять объектами (домами) и заказами, при этом менеджерам совершенно не требуется уметь программировать.<br />
@@ -75,7 +75,7 @@ View and delete orders.
 Assign managers (give rights)  who will deal with objects (houses) and orders, while they do not need to know programming at all.
 <br />
 <br />
-<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_manage.png?raw=true" alt="Object page" width="1024" height="492">
+<img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_manage.png?raw=true" alt="Object page">
 <br />
 <br />
 ### Разработал с помощью / Built With
