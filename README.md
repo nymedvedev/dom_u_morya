@@ -1,8 +1,9 @@
+<a name="readme-top"></a>
 <div align="center">
   <a href="https://github.com/nymedvedev/dom_u_morya.git">
     <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/static/images/logo.png?raw=true" alt="Logo" width="227" height="61">
   </a>
-  <h1>Dom_u_morya</h3>
+  <h1>Dom_u_morya</h1>
   <p>
     Мой первый проект на Django: онлайн-магазин домов у моря. <br />
      <br />
@@ -78,6 +79,9 @@ Assign managers (give rights)  who will deal with objects (houses) and orders, w
 <img src="https://github.com/nymedvedev/dom_u_morya/blob/master/screenshot_of_project_admin_manage.png?raw=true" alt="Object page">
 <br />
 <br />
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Разработал с помощью / Built With
 
 
@@ -100,4 +104,12 @@ Project Link: [https://github.com/nymedvedev/dom_u_morya](https://github.com/nym
 [HTML-url]: https://html.com/html5/
 [CSS-url]: https://www.w3.org/Style/CSS/Overview.en.html
 
+
+## [Лицензия / License](https://github.com/nymedvedev/dom_u_morya/blob/master/LICENSE.md)
+
+<b>Dom_u_morya</b> © [Medvedev Nikolay](https://github.com/nymedvedev)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
